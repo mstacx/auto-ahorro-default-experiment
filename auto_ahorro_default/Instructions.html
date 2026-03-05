@@ -1,0 +1,33 @@
+{{ extends "global/Page.html" }} {{ block title }}Instrucciones{{ endblock }} {{
+block content }}
+
+<p>Bienvenido al experimento de ahorro.</p>
+
+<p>Participarás en {{ C.NUM_ROUNDS }} rondas. En cada ronda:</p>
+
+<ul>
+	<li>
+		Recibirás un ingreso aleatorio entre {{ C.MIN_INCOME }} y {{ C.MAX_INCOME }}
+		puntos
+	</li>
+	<li>Decidirás cuánto ahorrar manualmente y cuánto consumir</li>
+	<li>Tu balance de ahorros se acumulará entre rondas</li>
+</ul>
+
+{{ if treatment == 1 }}
+<p>
+	<b>Tu tratamiento:</b> Se aplicará automáticamente un {{
+	C.DEFAULT_RATE_PERCENT }}% de ahorro sobre tu ingreso cada ronda.
+</p>
+{{ else }}
+<p>
+	<b>Tu tratamiento:</b> No hay ahorro automático. Tú decides cuánto ahorrar.
+</p>
+{{ endif }}
+
+<p>
+	<b>Importante:</b> En la ronda {{ C.SHOCK_ROUND }} habrá un gasto obligatorio
+	de {{ C.SHOCK_AMOUNT }} puntos.
+</p>
+
+{{ next_button }} {{ endblock }}

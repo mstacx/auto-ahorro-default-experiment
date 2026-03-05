@@ -1,0 +1,23 @@
+{{ extends "global/Page.html" }}
+{{ block title }}Ronda {{ player.round_number }} de {{ C.NUM_ROUNDS }}{{ endblock }}
+
+{{ block content }}
+
+
+<p><b>Tu ingreso esta ronda:</b> {{ income }} puntos</p>
+
+{{ if treatment == 1 }}
+<p><b>Ahorro automático:</b> {{ automatic_saving }} puntos ({{ C.DEFAULT_RATE_PERCENT }}%)</p>
+<p><b>Ingreso disponible:</b> {{ available_income }} puntos</p>
+{{ endif }}
+
+{{ if is_shock_round }}
+<p><b>¡ATENCIÓN! En esta ronda hay un gasto obligatorio de {{ C.SHOCK_AMOUNT }} puntos que se descontará de tu balance líquido.</b></p>
+{{ endif }}
+
+{{ formfields }}
+
+{{ next_button }}
+
+
+{{ endblock }}

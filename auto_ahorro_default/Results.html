@@ -1,0 +1,25 @@
+{{ extends "global/Page.html" }}
+{{ block title }}Resultados - Ronda {{ player.round_number }}{{ endblock }}
+
+{{ block content }}
+
+
+<p><b>Resumen de esta ronda:</b></p>
+
+<ul>
+  <li>Ingreso: {{ player.income }} puntos</li>
+  <li>Ahorro automático: {{ player.automatic_saving }} puntos</li>
+  <li>Ahorro manual: {{ player.manual_saving }} puntos</li>
+  <li>Consumo: {{ player.consumption }} puntos</li>
+  {{ if is_shock_round }}
+  <li><b>Gasto obligatorio (shock): {{ C.SHOCK_AMOUNT }} puntos</b></li>
+  {{ endif }}
+</ul>
+
+<p><b>Balance de ahorros acumulado:</b> {{ player.savings_balance }} puntos</p>
+<p><b>Balance líquido:</b> {{ player.liquid_balance }} puntos</p>
+
+{{ next_button }}
+
+
+{{ endblock }}
