@@ -28,7 +28,7 @@ El experimento consiste en una serie de decisiones económicas repetidas en múl
 Características principales del diseño:
 
 - **Número de rondas:** 12
-- **Ingreso por ronda:** valor aleatorio entre 80 y 120 unidades experimentales
+- **Ingreso por ronda:** valor aleatorio entre 80 y 120 unidades experimentales, igual para todos.
 - **Tratamientos:**
   - **Control:** los participantes deciden cuánto ahorrar manualmente
   - **Tratamiento:** el sistema aplica automáticamente un ahorro del **10% del ingreso**
